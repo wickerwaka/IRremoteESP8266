@@ -945,6 +945,13 @@
 #define SEND_CARRIER_AC84   _IR_ENABLE_DEFAULT_
 #endif  // SEND_CARRIER_AC84
 
+#ifndef DECODE_XMI
+#define DECODE_XMI            _IR_ENABLE_DEFAULT_
+#endif  // DECODE_XMI
+#ifndef SEND_XMI
+#define SEND_XMI              _IR_ENABLE_DEFAULT_
+#endif  // SEND_XMI
+
 #if (DECODE_ARGO || DECODE_DAIKIN || DECODE_FUJITSU_AC || DECODE_GREE || \
      DECODE_KELVINATOR || DECODE_MITSUBISHI_AC || DECODE_TOSHIBA_AC || \
      DECODE_TROTEC || DECODE_HAIER_AC || DECODE_HITACHI_AC || \
@@ -1129,8 +1136,9 @@ enum decode_type_t {
   GORENJE,
   WOWWEE,
   CARRIER_AC84,  // 125
+  XMI,
   // Add new entries before this one, and update it to point to the last entry.
-  kLastDecodeType = CARRIER_AC84,
+  kLastDecodeType = XMI,
 };
 
 // Message lengths & required repeat values
@@ -1423,6 +1431,7 @@ const uint16_t kRhossStateLength = 12;
 const uint16_t kRhossBits = kRhossStateLength * 8;
 const uint16_t kRhossDefaultRepeat = 0;
 const uint16_t kClimaButlerBits = 52;
+const uint16_t kXMIBits = 20;
 
 
 // Legacy defines. (Deprecated)

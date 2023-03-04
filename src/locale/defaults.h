@@ -1117,6 +1117,9 @@ D_STR_INDIRECT " " D_STR_MODE
 #ifndef D_STR_ZEPEAL
 #define D_STR_ZEPEAL "ZEPEAL"
 #endif  // D_STR_ZEPEAL
+#ifndef D_STR_XMI
+#define D_STR_XMI "XMI"
+#endif  // D_STR_XMI
 
 // IRrecvDumpV2+
 #ifndef D_STR_TIMESTAMP

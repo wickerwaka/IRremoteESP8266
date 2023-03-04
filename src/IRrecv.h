@@ -877,6 +877,12 @@ class IRrecv {
                     const uint16_t nbits = kWowweeBits,
                     const bool strict = true);
 #endif  // DECODE_WOWWEE
+#if DECODE_XMI
+  bool decodeXMI(decode_results *results, uint16_t offset = kStartOffset,
+                 const uint16_t nbits = kXMIBits,
+                 const bool strict = false);
+#endif
+
 };
 
 #endif  // IRRECV_H_

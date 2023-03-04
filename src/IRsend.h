@@ -879,6 +879,10 @@ class IRsend {
   void sendWowwee(const uint64_t data, const uint16_t nbits = kWowweeBits,
                   const uint16_t repeat = kWowweeDefaultRepeat);
 #endif  // SEND_WOWWEE
+#if SEND_XMI
+  void sendXMI(uint64_t data, uint16_t nbits = kXMIBits,
+                uint16_t repeat = kNoRepeat);
+#endif
 
  protected:
 #ifdef UNIT_TEST

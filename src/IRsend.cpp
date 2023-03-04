@@ -631,6 +631,7 @@ uint16_t IRsend::defaultBits(const decode_type_t protocol) {
     case RC6:
     case SONY:
     case SONY_38K:
+    case XMI:
       return 20;
     case COOLIX:
     case INAX:
@@ -1139,6 +1140,12 @@ bool IRsend::send(const decode_type_t type, const uint64_t data,
       sendZepeal(data, nbits, min_repeat);
       break;
 #endif  // SEND_ZEPEAL
+#if SEND_XMI
+    case XMI:
+      sendXMI(data, nbits, min_repeat);
+      break;
+#endif
+
     default:
       return false;
   }
